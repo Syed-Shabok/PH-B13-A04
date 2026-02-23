@@ -1,12 +1,16 @@
 console.log("machine.js is working...");
 
+// DOM Elements
+let jobsContainer = document.getElementById("job-cards-container");
+let totalCount = document.getElementById("total-count");
+let jobCount = document.getElementById("amount-info");
+let noJobsCard = document.getElementById("no-jobs-card");
+allBtn = document.getElementById("all-toggle-btn");
+interviewBtn = document.getElementById("interview-toggle-btn");
+rejectedBtn = document.getElementById("rejected-toggle-btn");
+
 // Loads All Jobs
 function renderAllJobs() {
-  let jobsContainer = document.getElementById("job-cards-container");
-  let totalCount = document.getElementById("total-count");
-  let jobCount = document.getElementById("amount-info");
-  let noJobsCard = document.getElementById("no-jobs-card");
-
   jobsContainer.innerHTML = "";
   totalCount.innerText = jobs.length;
   jobCount.innerHTML = `${jobs.length} jobs`;
@@ -105,4 +109,17 @@ function deleteJob(jobName) {
   jobs = jobs.filter((job) => job.jobTitle != jobName);
   console.log(`${jobName} deleted.`);
   renderAllJobs();
+}
+
+function toggleButton(id) {
+  allBtn.classList.add("text-[#64748B]");
+  interviewBtn.classList.add("text-[#64748B]");
+  rejectedBtn.classList.add("text-[#64748B]");
+
+  allBtn.classList.remove("bg-blue-400", "text-white");
+  interviewBtn.classList.remove("bg-blue-400", "text-white");
+  rejectedBtn.classList.remove("bg-blue-400", "text-white");
+
+  document.getElementById(id).classList.add("bg-blue-400", "text-white");
+  document.getElementById(id).classList.remove("text-[#64748B]");
 }

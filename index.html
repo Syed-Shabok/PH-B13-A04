@@ -84,6 +84,7 @@
       <!-- Toggle Buttons Container -->
       <div class="flex gap-3">
         <button
+          onclick="toggleButton('all-toggle-btn')"
           id="all-toggle-btn"
           class="btn bg-blue-400 text-white w-20 text-[12px]"
         >
@@ -91,6 +92,7 @@
         </button>
 
         <button
+          onclick="toggleButton('interview-toggle-btn')"
           id="interview-toggle-btn"
           class="btn text-[#64748B] w-20 text-[12px]"
         >
@@ -98,6 +100,7 @@
         </button>
 
         <button
+          onclick="toggleButton('rejected-toggle-btn')"
           id="rejected-toggle-btn"
           class="btn text-[#64748B] w-20 text-[12px]"
         >
@@ -119,7 +122,15 @@
         </div>
 
         <div id="job-cards-container" class="flex flex-col gap-4">
-          <!-- Jobs will render here -->
+          <!-- All Jobs will render here -->
+        </div>
+
+        <div id="interview-job-cards-container" class="flex flex-col gap-4">
+          <!-- Interview Jobs will render here -->
+        </div>
+
+        <div id="rejected-job-cards-container" class="flex flex-col gap-4">
+          <!-- Rejected Jobs will render here -->
         </div>
       </section>
     </main>

@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Job Tracker</title>
+    <link rel="shortcut icon" href="./images/jobs.png" type="image/x-icon" />
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -23,6 +24,15 @@
       rel="stylesheet"
     />
 
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <!-- CSS -->
     <style>
       * {
@@ -30,10 +40,10 @@
       }
     </style>
   </head>
-  <body class="bg-[#F8FAFC]">
-    <header class="w-3/4 mx-auto space-y-6 py-10">
+  <body class="bg-[#F8FAFC] min-h-screen">
+    <header class="w-3/4 mx-auto space-y-6 pt-10 pb-6">
       <h1 class="font-bold text-3xl">Job Application Tracker</h1>
-      <!-- Cards Container -->
+      <!--Info Cards Container -->
       <div class="grid grid-cols-3 gap-4">
         <div class="card card-border bg-base-100">
           <div class="card-body">
@@ -63,5 +73,280 @@
 
       <hr class="bg-[#E6E7E9] border-none h-[1.5px]" />
     </header>
+
+    <main class="w-3/4 mx-auto space-y-5">
+      <!-- Info Section -->
+      <div class="flex justify-between">
+        <h2 class="font-semibold text-xl">Available Jobs</h2>
+        <p id="amount-info" class="text-[#64748B] font-medium">8 jobs</p>
+      </div>
+
+      <!-- Toggle Buttons Container -->
+      <div class="flex gap-3">
+        <button
+          id="all-toggle-btn"
+          class="btn bg-blue-400 text-white w-20 text-[12px]"
+        >
+          All
+        </button>
+
+        <button
+          id="interview-toggle-btn"
+          class="btn text-[#64748B] w-20 text-[12px]"
+        >
+          Interview
+        </button>
+
+        <button
+          id="rejected-toggle-btn"
+          class="btn text-[#64748B] w-20 text-[12px]"
+        >
+          Rejected
+        </button>
+      </div>
+
+      <!-- Job Cards Section -->
+      <section id="job-cards-container" class="flex flex-col gap-4 pb-10">
+        <!-- Job Card -->
+        <div class="card card-border bg-base-100">
+          <div class="card-body space-y-3">
+            <!-- Job Title & Delete Button -->
+            <div class="flex justify-between">
+              <div>
+                <h2 id="job-title" class="text-[18px] font-semibold">
+                  Mobile First Corp
+                </h2>
+                <p id="job-role" class="text-[#64748B]">
+                  React Native Developer
+                </p>
+              </div>
+
+              <button id="delete-btn" class="btn btn-circle bg-base-100">
+                <i class="fa-regular fa-trash-can opacity-50"></i>
+              </button>
+            </div>
+
+            <!-- Job info -->
+            <div class="flex w-fit gap-2">
+              <p id="job-type" class="text-[#64748B] text-sm">Remote</p>
+              <p class="text-[#64748B] text-sm">•</p>
+              <p id="job-time" class="text-[#64748B] text-sm">Full-time</p>
+              <p class="text-[#64748B] text-sm">•</p>
+              <p id="job-pay" class="text-[#64748B] text-sm">
+                $130,000 - $175,000
+              </p>
+            </div>
+
+            <!-- Job Status & Description -->
+            <div class="space-y-2">
+              <!-- Status Badge Container -->
+              <div>
+                <div
+                  id="not-applied-badge"
+                  class="badge badge-soft badge-info text-black font-medium px-3 py-4 text-sm"
+                >
+                  NOT APPLIED
+                </div>
+
+                <div
+                  id="interview-badge"
+                  class="badge badge-soft badge-accent font-medium px-3 py-4 text-sm hidden"
+                >
+                  INTERVIEW
+                </div>
+
+                <div
+                  id="rejected-badge"
+                  class="badge badge-soft badge-secondary font-medium px-3 py-4 text-sm hidden"
+                >
+                  REJECTED
+                </div>
+              </div>
+
+              <p id="job-description" class="text-[#64748B]">
+                Build cross-platform mobile applications using React Native.
+                Work on products used by millions of users worldwide.
+              </p>
+            </div>
+
+            <!-- Job Status Buttons -->
+            <div class="flex gap-2">
+              <button
+                id="interview-btn"
+                class="btn btn-outline btn-accent text-sm"
+              >
+                INTERVIEW
+              </button>
+              <button
+                id="rejected-btn"
+                class="btn btn-outline btn-secondary text-sm"
+              >
+                REJECTED
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job Card -->
+        <div class="card card-border bg-base-100">
+          <div class="card-body space-y-3">
+            <!-- Job Title & Delete Button -->
+            <div class="flex justify-between">
+              <div>
+                <h2 id="job-title" class="text-[18px] font-semibold">
+                  Mobile First Corp
+                </h2>
+                <p id="job-role" class="text-[#64748B]">
+                  React Native Developer
+                </p>
+              </div>
+
+              <button id="delete-btn" class="btn btn-circle bg-base-100">
+                <i class="fa-regular fa-trash-can opacity-50"></i>
+              </button>
+            </div>
+
+            <!-- Job info -->
+            <div class="flex w-fit gap-2">
+              <p id="job-type" class="text-[#64748B] text-sm">Remote</p>
+              <p class="text-[#64748B] text-sm">•</p>
+              <p id="job-time" class="text-[#64748B] text-sm">Full-time</p>
+              <p class="text-[#64748B] text-sm">•</p>
+              <p id="job-pay" class="text-[#64748B] text-sm">
+                $130,000 - $175,000
+              </p>
+            </div>
+
+            <!-- Job Status & Description -->
+            <div class="space-y-2">
+              <!-- Status Badge Container -->
+              <div>
+                <div
+                  id="not-applied-badge"
+                  class="badge badge-soft badge-info text-black font-medium px-3 py-4 text-sm"
+                >
+                  NOT APPLIED
+                </div>
+
+                <div
+                  id="interview-badge"
+                  class="badge badge-soft badge-accent font-medium px-3 py-4 text-sm hidden"
+                >
+                  INTERVIEW
+                </div>
+
+                <div
+                  id="rejected-badge"
+                  class="badge badge-soft badge-secondary font-medium px-3 py-4 text-sm hidden"
+                >
+                  REJECTED
+                </div>
+              </div>
+
+              <p id="job-description" class="text-[#64748B]">
+                Build cross-platform mobile applications using React Native.
+                Work on products used by millions of users worldwide.
+              </p>
+            </div>
+
+            <!-- Job Status Buttons -->
+            <div class="flex gap-2">
+              <button
+                id="interview-btn"
+                class="btn btn-outline btn-accent text-sm"
+              >
+                INTERVIEW
+              </button>
+              <button
+                id="rejected-btn"
+                class="btn btn-outline btn-secondary text-sm"
+              >
+                REJECTED
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job Card -->
+        <div class="card card-border bg-base-100">
+          <div class="card-body space-y-3">
+            <!-- Job Title & Delete Button -->
+            <div class="flex justify-between">
+              <div>
+                <h2 id="job-title" class="text-[18px] font-semibold">
+                  Mobile First Corp
+                </h2>
+                <p id="job-role" class="text-[#64748B]">
+                  React Native Developer
+                </p>
+              </div>
+
+              <button id="delete-btn" class="btn btn-circle bg-base-100">
+                <i class="fa-regular fa-trash-can opacity-50"></i>
+              </button>
+            </div>
+
+            <!-- Job info -->
+            <div class="flex w-fit gap-2">
+              <p id="job-type" class="text-[#64748B] text-sm">Remote</p>
+              <p class="text-[#64748B] text-sm">•</p>
+              <p id="job-time" class="text-[#64748B] text-sm">Full-time</p>
+              <p class="text-[#64748B] text-sm">•</p>
+              <p id="job-pay" class="text-[#64748B] text-sm">
+                $130,000 - $175,000
+              </p>
+            </div>
+
+            <!-- Job Status & Description -->
+            <div class="space-y-2">
+              <!-- Status Badge Container -->
+              <div>
+                <div
+                  id="not-applied-badge"
+                  class="badge badge-soft badge-info text-black font-medium px-3 py-4 text-sm"
+                >
+                  NOT APPLIED
+                </div>
+
+                <div
+                  id="interview-badge"
+                  class="badge badge-soft badge-accent font-medium px-3 py-4 text-sm hidden"
+                >
+                  INTERVIEW
+                </div>
+
+                <div
+                  id="rejected-badge"
+                  class="badge badge-soft badge-secondary font-medium px-3 py-4 text-sm hidden"
+                >
+                  REJECTED
+                </div>
+              </div>
+
+              <p id="job-description" class="text-[#64748B]">
+                Build cross-platform mobile applications using React Native.
+                Work on products used by millions of users worldwide.
+              </p>
+            </div>
+
+            <!-- Job Status Buttons -->
+            <div class="flex gap-2">
+              <button
+                id="interview-btn"
+                class="btn btn-outline btn-accent text-sm"
+              >
+                INTERVIEW
+              </button>
+              <button
+                id="rejected-btn"
+                class="btn btn-outline btn-secondary text-sm"
+              >
+                REJECTED
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   </body>
 </html>

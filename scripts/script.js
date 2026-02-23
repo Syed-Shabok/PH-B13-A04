@@ -83,7 +83,11 @@ let jobs = [
   },
 ];
 
-renderAllJobs();
+// renderAllJobs();
+
+document.addEventListener("DOMContentLoaded", function () {
+  renderAllJobs();
+});
 
 let jobContainer = document.getElementById("job-cards-container");
 

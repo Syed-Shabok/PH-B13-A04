@@ -3,12 +3,21 @@ console.log("machine.js is working...");
 // Loads All Jobs
 function renderAllJobs() {
   let jobsContainer = document.getElementById("job-cards-container");
+  let totalCount = document.getElementById("total-count");
   let jobCount = document.getElementById("amount-info");
+  let noJobsCard = document.getElementById("no-jobs-card");
 
   jobsContainer.innerHTML = "";
+  totalCount.innerText = jobs.length;
   jobCount.innerHTML = `${jobs.length} jobs`;
 
   console.log("Jobs Loaded: ");
+
+  if (jobs.length === 0) {
+    noJobsCard.classList.remove("hidden");
+  } else {
+    noJobsCard.classList.add("hidden");
+  }
 
   for (let job of jobs) {
     // console.log(job);

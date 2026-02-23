@@ -106,8 +106,21 @@
       </div>
 
       <!-- Job Cards Section -->
-      <section id="job-cards-container" class="flex flex-col gap-4 pb-10">
-        <!-- Jobs will render here -->
+      <section id="pb-10">
+        <!-- No Jobs Available Card -->
+        <div id="no-jobs-card" class="card card-border bg-base-100 p-25 hidden">
+          <div class="card-body flex flex-col items-center justify-center">
+            <img src="./images/jobs.png" class="w-fit" alt="File Icon" />
+            <h2 class="font-semibold text-2xl">No Jobs Available</h2>
+            <p class="text-[#64748B] font-medium text-base">
+              Check back soon for new job opportunities
+            </p>
+          </div>
+        </div>
+
+        <div id="job-cards-container" class="flex flex-col gap-4">
+          <!-- Jobs will render here -->
+        </div>
       </section>
     </main>
 

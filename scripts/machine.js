@@ -56,11 +56,11 @@ function renderAllJobs() {
 
             <!-- Job info -->
             <div class="flex w-fit gap-2">
-              <p class="job-location text-[#64748B] text-sm">${job.jobLocation}</p>
-              <p class="text-[#64748B] text-sm">•</p>
-              <p class="job-time text-[#64748B] text-sm">${job.jobTime}</p>
-              <p class="text-[#64748B] text-sm">•</p>
-              <p class="job-pay text-[#64748B] text-sm">
+              <p class="job-location text-[#64748B] text-xs md:text-sm">${job.jobLocation}</p>
+              <p class="text-[#64748B] text-xs md:text-sm">•</p>
+              <p class="job-time text-[#64748B] text-xs md:text-sm">${job.jobTime}</p>
+              <p class="text-[#64748B] text-xs md:text-sm">•</p>
+              <p class="job-pay text-[#64748B] text-xs md:text-sm">
                 ${job.jobPay}
               </p>
             </div>
@@ -150,11 +150,11 @@ function renderInterviewJobs() {
 
             <!-- Job info -->
             <div class="flex w-fit gap-2">
-              <p class="job-location text-[#64748B] text-sm">${job.jobLocation}</p>
-              <p class="text-[#64748B] text-sm">•</p>
-              <p class="job-time text-[#64748B] text-sm">${job.jobTime}</p>
-              <p class="text-[#64748B] text-sm">•</p>
-              <p class="job-pay text-[#64748B] text-sm">
+              <p class="job-location text-[#64748B] text-xs md:text-sm">${job.jobLocation}</p>
+              <p class="text-[#64748B] text-xs md:text-sm">•</p>
+              <p class="job-time text-[#64748B] text-xs md:text-sm">${job.jobTime}</p>
+              <p class="text-[#64748B] text-xs md:text-sm">•</p>
+              <p class="job-pay text-[#64748B] text-xs md:text-sm">
                 ${job.jobPay}
               </p>
             </div>
@@ -244,11 +244,11 @@ function renderRejectedJobs() {
 
             <!-- Job info -->
             <div class="flex w-fit gap-2">
-              <p class="job-location text-[#64748B] text-sm">${job.jobLocation}</p>
-              <p class="text-[#64748B] text-sm">•</p>
-              <p class="job-time text-[#64748B] text-sm">${job.jobTime}</p>
-              <p class="text-[#64748B] text-sm">•</p>
-              <p class="job-pay text-[#64748B] text-sm">
+              <p class="job-location text-[#64748B] text-xs md:text-sm">${job.jobLocation}</p>
+              <p class="text-[#64748B] text-xs md:text-sm">•</p>
+              <p class="job-time text-[#64748B] text-xs md:text-sm">${job.jobTime}</p>
+              <p class="text-[#64748B] text-xs md:text-sm">•</p>
+              <p class="job-pay text-[#64748B] text-xs md:text-sm">
                 ${job.jobPay}
               </p>
             </div>

@@ -36,10 +36,10 @@
     </style>
   </head>
   <body class="bg-[#F8FAFC] min-h-screen">
-    <header class="w-3/4 mx-auto space-y-6 pt-10 pb-6">
+    <header class="w-[95%] md:w-3/4 mx-auto space-y-6 pt-10 pb-6">
       <h1 class="font-bold text-3xl">Job Application Tracker</h1>
       <!--Info Cards Container -->
-      <div class="grid grid-cols-3 gap-4">
+      <div class="grid md:grid-cols-3 gap-4">
         <div class="card card-border bg-base-100">
           <div class="card-body">
             <p class="font-medium">Total</p>
@@ -65,7 +65,7 @@
       </div>
       <hr class="bg-[#E6E7E9] border-none h-[1.5px]" />
     </header>
-    <main class="w-3/4 mx-auto space-y-5">
+    <main class="w-[95%] md:w-3/4 mx-auto space-y-5">
       <!-- Info Section -->
       <div class="flex justify-between">
         <h2 class="font-semibold text-xl">Available Jobs</h2>
@@ -98,7 +98,10 @@
       <!-- Job Cards Section -->
       <section id="job-holder-section" class="pb-10">
         <!-- No Jobs Available Card -->
-        <div id="no-jobs-card" class="card card-border bg-base-100 p-25 hidden">
+        <div
+          id="no-jobs-card"
+          class="card card-border bg-base-100 p-10 md:p-25 text-center hidden"
+        >
           <div class="card-body flex flex-col items-center justify-center">
             <img src="./images/jobs.png" class="w-fit" alt="File Icon" />
             <h2 class="font-semibold text-2xl">No Jobs Available</h2>

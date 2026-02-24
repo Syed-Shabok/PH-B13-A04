@@ -82,22 +82,32 @@ let jobs = [
       "Looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. Work with a talented team on cutting-edge projects.",
   },
 ];
+let interviewJobs = [];
+let rejectedJobs = [];
 
-// renderAllJobs();
+renderAllJobs();
 
-document.addEventListener("DOMContentLoaded", function () {
-  renderAllJobs();
-});
+let jobHolder = document.getElementById("job-holder-section");
 
-let jobContainer = document.getElementById("job-cards-container");
-
-// Handles Deleting Jobs
-jobContainer.addEventListener("click", function (event) {
+// Handles Click Events
+jobHolder.addEventListener("click", function (event) {
   if (event.target.closest(".delete-btn")) {
     let jobName = event.target
       .closest(".job-card")
       .querySelector(".job-title").innerText;
 
     deleteJob(jobName);
+  } else if (event.target.closest(".interview-btn")) {
+    let jobName = event.target
+      .closest(".job-card")
+      .querySelector(".job-title").innerText;
+
+    addToInterview(jobName);
+  } else if (event.target.closest(".rejected-btn")) {
+    let jobName = event.target
+      .closest(".job-card")
+      .querySelector(".job-title").innerText;
+
+    addToRejected(jobName);
   }
 });

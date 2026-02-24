@@ -5,17 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Job Tracker</title>
     <link rel="shortcut icon" href="./images/jobs.png" type="image/x-icon" />
-
     <!-- Tailwind CSS -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
     <!-- Daisy UI -->
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@5"
       rel="stylesheet"
       type="text/css"
     />
-
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,7 +20,6 @@
       href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"
       rel="stylesheet"
     />
-
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
@@ -32,7 +28,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
     <!-- CSS -->
     <style>
       * {
@@ -51,7 +46,6 @@
             <h2 id="total-count" class="text-2xl font-bold">8</h2>
           </div>
         </div>
-
         <div class="card card-border bg-base-100">
           <div class="card-body">
             <p class="font-medium">Interview</p>
@@ -60,7 +54,6 @@
             </h2>
           </div>
         </div>
-
         <div class="card card-border bg-base-100">
           <div class="card-body">
             <p class="font-medium">Rejected</p>
@@ -70,17 +63,14 @@
           </div>
         </div>
       </div>
-
       <hr class="bg-[#E6E7E9] border-none h-[1.5px]" />
     </header>
-
     <main class="w-3/4 mx-auto space-y-5">
       <!-- Info Section -->
       <div class="flex justify-between">
         <h2 class="font-semibold text-xl">Available Jobs</h2>
         <p id="amount-info" class="text-[#64748B] font-medium">8 jobs</p>
       </div>
-
       <!-- Toggle Buttons Container -->
       <div class="flex gap-3">
         <button
@@ -90,7 +80,6 @@
         >
           All
         </button>
-
         <button
           onclick="toggleButton('interview-toggle-btn')"
           id="interview-toggle-btn"
@@ -98,7 +87,6 @@
         >
           Interview
         </button>
-
         <button
           onclick="toggleButton('rejected-toggle-btn')"
           id="rejected-toggle-btn"
@@ -107,9 +95,8 @@
           Rejected
         </button>
       </div>
-
       <!-- Job Cards Section -->
-      <section id="pb-10">
+      <section id="job-holder-section" class="pb-10">
         <!-- No Jobs Available Card -->
         <div id="no-jobs-card" class="card card-border bg-base-100 p-25 hidden">
           <div class="card-body flex flex-col items-center justify-center">
@@ -120,21 +107,17 @@
             </p>
           </div>
         </div>
-
         <div id="job-cards-container" class="flex flex-col gap-4">
           <!-- All Jobs will render here -->
         </div>
-
         <div id="interview-job-cards-container" class="flex flex-col gap-4">
           <!-- Interview Jobs will render here -->
         </div>
-
         <div id="rejected-job-cards-container" class="flex flex-col gap-4">
           <!-- Rejected Jobs will render here -->
         </div>
       </section>
     </main>
-
     <!-- Scripts -->
     <script src="./scripts/machine.js"></script>
     <script src="./scripts/script.js"></script>

@@ -1,6 +1,7 @@
 console.log("machine.js is working...");
 
 // DOM Elements
+let currentTab = "all-toggle-btn";
 let jobsContainer = document.getElementById("job-cards-container");
 let interviewJobsContainer = document.getElementById(
   "interview-job-cards-container",
@@ -299,6 +300,17 @@ function renderRejectedJobs() {
   }
 }
 
+// Rerenders only the current tab
+function renderCurrentTab() {
+  if (currentTab === "interview-toggle-btn") {
+    renderInterviewJobs();
+  } else if (currentTab === "rejected-toggle-btn") {
+    renderRejectedJobs();
+  } else {
+    renderAllJobs();
+  }
+}
+
 // Deletes a Job based on the Job's Name
 function deleteJob(jobName) {
   jobs = jobs.filter((job) => job.jobTitle != jobName);
@@ -313,9 +325,7 @@ function deleteJob(jobName) {
 
   console.log(`${jobName} deleted.`);
 
-  renderAllJobs();
-  renderInterviewJobs();
-  renderRejectedJobs();
+  renderCurrentTab();
 }
 
 // Adds a Job to the Interview List.
@@ -336,9 +346,7 @@ function addToInterview(jobName) {
   //   console.log("Interview: ", interviewJobs);
   //   console.log("Rejected: ", rejectedJobs);
 
-  renderAllJobs();
-  renderInterviewJobs();
-  renderRejectedJobs();
+  renderCurrentTab();
 }
 
 // Adds a Job to the Rejected List.
@@ -359,11 +367,10 @@ function addToRejected(jobName) {
   //   console.log("Interview: ", interviewJobs);
   //   console.log("Rejected: ", rejectedJobs);
 
-  renderAllJobs();
-  renderInterviewJobs();
-  renderRejectedJobs();
+  renderCurrentTab();
 }
 
+// Changes current tab based on which type of job is selected.
 function toggleButton(id) {
   allBtn.classList.add("text-[#64748B]");
   interviewBtn.classList.add("text-[#64748B]");
@@ -375,6 +382,8 @@ function toggleButton(id) {
 
   document.getElementById(id).classList.add("bg-blue-400", "text-white");
   document.getElementById(id).classList.remove("text-[#64748B]");
+
+  currentTab = id;
 
   if (id === "interview-toggle-btn") {
     jobsContainer.classList.add("hidden");
